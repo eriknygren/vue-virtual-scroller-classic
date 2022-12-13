@@ -25,24 +25,11 @@ npm install --save vue-virtual-scroller
 
 **⚠️ `vue-virtual-scroller` now uses [vue-observe-visibility](https://github.com/Akryum/vue-observe-visibility#installation) to automatically refresh itself when shown to prevent display glitches. This means you need to include the [Intersection Observer polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) needed by `vue-observe-visibility` for this to work in old browsers (like Internet Explorer).**
 
-## Default import
-
-Install all the components:
-
-```javascript
-import Vue from 'vue'
-import VueVirtualScroller from 'vue-virtual-scroller'
-
-Vue.use(VueVirtualScroller)
-```
-
-Use specific components:
-
 ```javascript
 import Vue from 'vue'
 import { VirtualScroller } from 'vue-virtual-scroller'
 
-Vue.component('virtual-scroller', VirtualScroller)
+app.component('virtual-scroller', VirtualScroller)
 ```
 
 **⚠️ A css file is included when importing the package:**
@@ -58,18 +45,6 @@ import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 
 <script src="vue.js"></script>
 <script src="vue-virtual-scroller/dist/vue-virtual-scroller.min.js"></script>
-```
-
-If Vue is detected, the plugin will be installed automatically. If not, install the component:
-
-```javascript
-Vue.use(VueVirtualScroller)
-```
-
-Or register it with a custom name:
-
-```javascript
-Vue.component('virtual-scroller', VueVirtualScroller.VirtualScroller)
 ```
 
 # Usage
@@ -352,53 +327,6 @@ export default {
 }
 </script>
 ```
-
-# Experimental component: RecycleList
-
-It's very similar to virtual-scroller, but:
-
-- Faster and less CPU intensive
-- Different HTML structure (don't try doing a `<table>` with it, use divs!)
-- No tag customization
-- No renderers features (use scoped slots!)
-- Recycles scoped slot content (including components) in the list (no destroyed components), depending on item types (customize with `typeField` prop)
-- The components used in the list should expect `item` prop change without being re-created (use computed props or watchers to properly react to props changes!)
-- You don't need to set `key` on list content (but you should on `<img>` elements)
-- You get a `active` prop in the scoped slot, that is `false` when the view isn't currently rendered (but could be reused later).
-- To emulate conditions that would otherwise be available in a `v-for` loop, the scoped slot exposes an `index` prop that reflects each item's position in the `items` array
-
-Both fixed and dynamic height modes are supported (set `itemHeight` prop for fixed height mode).
-
-```html
-<recycle-list
-  class="scroller"
-  :items="items"
->
-  <!-- For each item -->
-  <template slot-scope="{ item, index, active }">
-    <!-- Reactive dynamic height -->
-    <div
-      v-if="item.type === 'letter'"
-      class="letter big"
-      @click="item.height = (item.height === 200 ? 300 : 200)"
-    >
-      {{ item.value }}
-    </div>
-
-    <!-- Component -->
-    <MyPersonComponent
-      v-else-if="item.type === 'person'"
-      :data="item.value"
-      :index="index"
-      :active="active"
-    />
-  </template>
-</recycle-list>
-```
-
-Please share feeback on the new RecycleList component in the issues!
-
----
 
 ## License
 
