@@ -1,10 +1,10 @@
 {
-  "name": "vue-virtual-scroller",
+  "name": "vue-virtual-scroller-classic",
   "description": "Smooth scrolling for any amount of data",
   "version": "0.12.2",
   "author": {
-    "name": "Guillaume Chau",
-    "email": "guillaume.b.chau@gmail.com"
+    "name": "Erik Nygren",
+    "email": "hello@eriknygren.dev"
   },
   "keywords": [
     "vue",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Akryum/vue-virtual-scroller.git"
+    "url": "git+https://github.com/eriknygren/vue-virtual-scroller-classic.git"
   },
   "bugs": {
-    "url": "https://github.com/Akryum/vue-virtual-scroller/issues"
+    "url": "https://github.com/eriknygren/vue-virtual-scroller-classic/issues"
   },
-  "homepage": "https://github.com/Akryum/vue-virtual-scroller#readme",
+  "homepage": "https://github.com/eriknygren/vue-virtual-scroller-classic#readme",
   "peerDependencies": {
     "vue": "^3.2.41"
   },

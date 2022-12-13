@@ -1,15 +1,19 @@
-# vue-virtual-scroller
+# vue-virtual-scroller-classic
 
-[![npm](https://img.shields.io/npm/v/vue-virtual-scroller.svg) ![npm](https://img.shields.io/npm/dm/vue-virtual-scroller.svg)](https://www.npmjs.com/package/vue-virtual-scroller)
-[![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
+This is a vue 3 implementation of the original `VirtualScroller` from version [v0.12.2](https://github.com/Akryum/vue-virtual-scroller/releases/tag/v0.12.2)
+of `vue-virtual-scroller`.
 
-Smooth scroll with any amount of data ([demo](https://akryum.github.io/vue-virtual-scroller/)).
+This removes the RecycleScroller and uses the original approach, which means you're safe to use
+local component instance data inside the scroller.
 
-<p>
-  <a href="https://www.patreon.com/akryum" target="_blank">
-    <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patreon">
-  </a>
-</p>
+The end result is slower rendering, but less implementation specific code, and no need to use [idState](https://github.com/Akryum/vue-virtual-scroller/blob/master/packages/vue-virtual-scroller/README.md#idstate)
+
+The use case this is for is where virtualisation is required to speed up initial page renders on lists where each
+component entry has significant local state. But a little bit of loading time is acceptable when components are mounted/unmounted
+as the list is scrolled.
+
+For vue 2 feel free to use [the original v0.12.2](https://github.com/Akryum/vue-virtual-scroller/releases/tag/v0.12.2),
+in this package all vue 2 -> 3 deprecations are migrated.
 
 ## Table of contents
 
@@ -20,31 +24,28 @@ Smooth scroll with any amount of data ([demo](https://akryum.github.io/vue-virtu
 # Installation
 
 ```
-npm install --save vue-virtual-scroller
+npm install --save vue-virtual-scroller-classic
 ```
-
-**⚠️ `vue-virtual-scroller` now uses [vue-observe-visibility](https://github.com/Akryum/vue-observe-visibility#installation) to automatically refresh itself when shown to prevent display glitches. This means you need to include the [Intersection Observer polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) needed by `vue-observe-visibility` for this to work in old browsers (like Internet Explorer).**
 
 ```javascript
 import Vue from 'vue'
-import { VirtualScroller } from 'vue-virtual-scroller'
+import { VirtualScroller } from 'vue-virtual-scroller-classic'
 
-app.component('virtual-scroller', VirtualScroller)
 ```
 
 **⚠️ A css file is included when importing the package:**
 
 ```js
-import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+import 'vue-virtual-scroller-classic/dist/vue-virtual-scroller.css'
 ```
 
 ## Browser
 
 ```html
-<link rel="stylesheet" href="vue-virtual-scroller/dist/vue-virtual-scroller.css"/>
+<link rel="stylesheet" href="vue-virtual-scroller-classic/dist/vue-virtual-scroller.css"/>
 
 <script src="vue.js"></script>
-<script src="vue-virtual-scroller/dist/vue-virtual-scroller.min.js"></script>
+<script src="vue-virtual-scroller-classic/dist/vue-virtual-scroller.min.js"></script>
 ```
 
 # Usage
