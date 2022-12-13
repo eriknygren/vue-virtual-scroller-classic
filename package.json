@@ -1,7 +1,7 @@
 {
   "name": "vue-virtual-scroller-classic",
   "description": "Smooth scrolling for any amount of data",
-  "version": "0.12.2",
+  "version": "1.0.0",
   "author": {
     "name": "Erik Nygren",
     "email": "hello@eriknygren.dev"
