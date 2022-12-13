@@ -1,7 +1,7 @@
 <template>
   <component
-    v-observe-visibility="handleVisibilityChange"
     :is="mainTag"
+    v-observe-visibility="handleVisibilityChange"
     :class="cssClass"
     class="virtual-scroller"
     @scroll.passive="handleScroll"
@@ -10,8 +10,8 @@
       name="before-container"
     />
     <component
-      ref="itemContainer"
       :is="containerTag"
+      ref="itemContainer"
       :class="containerClass"
       :style="itemContainerStyle"
       class="item-container"
@@ -20,17 +20,17 @@
         name="before-content"
       />
       <component
-        ref="items"
         :is="contentTag"
+        ref="items"
         :class="contentClass"
         :style="itemsStyle"
         class="items"
       >
         <template v-if="renderers">
           <component
+            :is="renderers[item[typeField]]"
             v-for="(item, index) in visibleItems"
             :key="keysEnabled && item[keyField] || undefined"
-            :is="renderers[item[typeField]]"
             :item="item"
             :item-index="$_startIndex + index"
             class="item"
@@ -106,6 +106,13 @@ export default {
       default: false,
     },
   },
+
+  emits: [
+    'resize',
+    'visible',
+    'hidden',
+    'update',
+  ],
 
   data () {
     return {
