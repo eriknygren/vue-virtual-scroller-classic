@@ -989,7 +989,7 @@
   }
   var plugin = {
     // eslint-disable-next-line no-undef
-    version: "1.1.0",
+    version: "1.1.1",
     install: function install(app, options) {
       var finalOptions = Object.assign({}, {
         installComponents: true,
