@@ -575,10 +575,12 @@
             };
           }
           return heights;
+        } else {
+          return {};
         }
       }
     },
-    beforeDestroy: function beforeDestroy() {
+    beforeUnmount: function beforeUnmount() {
       this.removeListeners();
     },
     methods: {
@@ -653,8 +655,8 @@
       itemsLimitError: function itemsLimitError() {
         var _this = this;
         setTimeout(function () {
-          console.log("It seems the scroller element isn't scrolling, so it tries to render all the items at once.", 'Scroller:', _this.$el);
-          console.log("Make sure the scroller has a fixed height and 'overflow-y' set to 'auto' so it can scroll correctly and only render the items visible in the scroll viewport.");
+          console.log('It seems the scroller element isn\'t scrolling, so it tries to render all the items at once.', 'Scroller:', _this.$el);
+          console.log('Make sure the scroller has a fixed height and \'overflow-y\' set to \'auto\' so it can scroll correctly and only render the items visible in the scroll viewport.');
         });
         throw new Error('Rendered items limit reached');
       }
@@ -706,6 +708,13 @@
         default: false,
       },
     },
+
+    emits: [
+      'resize',
+      'visible',
+      'hidden',
+      'update',
+    ],
 
     data () {
       return {
