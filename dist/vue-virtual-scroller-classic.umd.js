@@ -1012,4 +1012,4 @@
   Object.defineProperty(exports, '__esModule', { value: true });
 
 }));
-//# sourceMappingURL=vue-virtual-scroller.umd.js.map
+//# sourceMappingURL=vue-virtual-scroller-classic.umd.js.map

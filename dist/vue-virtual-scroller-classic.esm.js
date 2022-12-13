@@ -579,4 +579,4 @@ var plugin = {
 };
 
 export { script as VirtualScroller, plugin as default };
-//# sourceMappingURL=vue-virtual-scroller.esm.js.map
+//# sourceMappingURL=vue-virtual-scroller-classic.esm.js.map
