@@ -36,16 +36,16 @@ import { VirtualScroller } from 'vue-virtual-scroller-classic'
 **⚠️ A css file is included when importing the package:**
 
 ```js
-import 'vue-virtual-scroller-classic/dist/vue-virtual-scroller.css'
+import 'vue-virtual-scroller-classic/dist/vue-virtual-scroller-classic.css'
 ```
 
 ## Browser
 
 ```html
-<link rel="stylesheet" href="vue-virtual-scroller-classic/dist/vue-virtual-scroller.css"/>
+<link rel="stylesheet" href="vue-virtual-scroller-classic/dist/vue-virtual-scroller-classic.css"/>
 
 <script src="vue.js"></script>
-<script src="vue-virtual-scroller-classic/dist/vue-virtual-scroller.min.js"></script>
+<script src="vue-virtual-scroller-classic/dist/vue-virtual-scroller-classic.min.js"></script>
 ```
 
 # Usage
