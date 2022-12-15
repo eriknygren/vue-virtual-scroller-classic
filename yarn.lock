@@ -2972,9 +2972,9 @@ vue-eslint-parser@^7.10.0:
     lodash "^4.17.21"
     semver "^6.3.0"
 
-vue-observe-visibility@Akryum/vue-observe-visibility#c539a011090e33c685719a3af5e80428f252f8a0:
-  version "1.0.0"
-  resolved "https://codeload.github.com/Akryum/vue-observe-visibility/tar.gz/c539a011090e33c685719a3af5e80428f252f8a0"
+vue-observe-visibility@Akryum/vue-observe-visibility#next:
+  version "2.0.0-alpha.1"
+  resolved "https://codeload.github.com/Akryum/vue-observe-visibility/tar.gz/0482855694736dea370c2125fa720ab8fb59f087"
 
 vue-resize@^2.0.0-alpha.1:
   version "2.0.0-alpha.1"
