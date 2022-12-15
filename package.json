@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "scrollparent": "^2.0.1",
-    "vue-observe-visibility": "^2.0.0-alpha.1",
+    "vue-observe-visibility": "Akryum/vue-observe-visibility#c539a011090e33c685719a3af5e80428f252f8a0",
     "vue-resize": "^2.0.0-alpha.1"
   },
   "files": [
