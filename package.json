@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eriknygren/vue-virtual-scroller-classic.git"
+    "url": "git+https://github.com/neonpictures/vue-virtual-scroller-classic.git"
   },
   "bugs": {
-    "url": "https://github.com/eriknygren/vue-virtual-scroller-classic/issues"
+    "url": "https://github.com/neonpictures/vue-virtual-scroller-classic/issues"
   },
-  "homepage": "https://github.com/eriknygren/vue-virtual-scroller-classic#readme",
+  "homepage": "https://github.com/neonpictures/vue-virtual-scroller-classic#readme",
   "peerDependencies": {
     "vue": "^3.2.41"
   },
