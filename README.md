@@ -28,8 +28,23 @@ npm install --save vue-virtual-scroller-classic
 ```
 
 ```javascript
-import Vue from 'vue'
+import { createApp } from 'vue'
 import { VirtualScroller } from 'vue-virtual-scroller-classic'
+
+const app = createApp({})
+
+// latest release of dependency vue-observe-visibility uses a vue 2 API, this
+// ensures compatibility until next release
+app.directive('observe-visibility', {
+  beforeMount: (el, binding, vnode) => {
+    vnode.context = binding.instance;
+    ObserveVisibility.bind(el, binding, vnode);
+  },
+  update: ObserveVisibility.update,
+  unmounted: ObserveVisibility.unbind,
+});
+
+app.component('VirtualScroller', VirtualScroller)
 
 ```
 
