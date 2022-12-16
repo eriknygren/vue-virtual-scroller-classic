@@ -30,6 +30,7 @@ npm install --save vue-virtual-scroller-classic
 ```javascript
 import { createApp } from 'vue'
 import { VirtualScroller } from 'vue-virtual-scroller-classic'
+import { ObserveVisibility } from 'vue-observe-visibility';
 
 const app = createApp({})
 
